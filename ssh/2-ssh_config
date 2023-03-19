@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Configuring a remote host to accept connections without password
+Host 5419-web-01
+Hostname 18.212.89.150
+User ubuntu
+Password Authentication no
+IdentityFile ~/.ssh/school
