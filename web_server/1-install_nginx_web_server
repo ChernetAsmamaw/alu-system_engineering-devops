@@ -10,8 +10,14 @@ sudo mkdir /var/www/html
 #Create a file inside that directory called index.html
 sudo touch /var/www/html/index.html
 
-sudo ufw allow 'Nginx HTTP'
+#Display message
+echo "Holberton School" > /etc/nginx/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
 
-#Display your message then
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo service nginx restart
+service nginx restart
