@@ -10,6 +10,8 @@ sudo mkdir /var/www/html
 #Create a file inside that directory called index.html
 sudo touch /var/www/html/index.html
 
+sudo ufw allow 'Nginx HTTP'
+
 #Display your message then
 sudo echo "Holberton School" > /var/www/html/index.html
 sudo service nginx restart
