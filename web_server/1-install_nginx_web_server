@@ -7,6 +7,21 @@ sudo apt-get update && upgrade
 sudo apt-get install nginx -y
 
 #Create a file inside that directory called index.html
+<<<<<<< HEAD
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+=======
+sudo touch /var/www/html/index.html
+#Display your message then
+echo "Holberton School" > /etc/nginx/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     location \ {
+	     root        /etc/nginx/html;
+	     index       index.html index.htm;
+     }
+}
+" > /etc/nginx/sites-available/default
+>>>>>>> bf45455ab4b2342b7a22497345aa9b150913909e
 
 sudo service nginx restart 
