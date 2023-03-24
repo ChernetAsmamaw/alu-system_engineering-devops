@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Redirection of nginx to server to a different page
 
-sudo apt update
-sudo apt -y install nginx
-newlines="/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=Ip6cw8gfHHI&ab_channel=d4vdVEVO;"
+sudo apt-get update
+sudo apt-get -y install nginx
+newlines="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 sudo sed -i "53i $newlines" /etc/nginx/sites-available/default
 sudo service nginx restart
