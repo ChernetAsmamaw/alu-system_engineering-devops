@@ -11,4 +11,5 @@ sudo touch /var/www/html/index.html
 #Display your message then
 echo "Holberton School" > /var/www/html/index.html
 
+#Restart sevice
 sudo service nginx restart 
