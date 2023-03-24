@@ -3,6 +3,6 @@
 
 sudo apt update
 sudo apt -y install nginx
-newlines="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=Ip6cw8gfHHI&ab_channel=d4vdVEVO;"
+newlines="/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=Ip6cw8gfHHI&ab_channel=d4vdVEVO;"
 sudo sed -i "53i $newlines" /etc/nginx/sites-available/default
 sudo service nginx restart
