@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo chown -R "$USER":"$USER" /var/www/html
-echo "Ceci n'est pas une page" > /var/www/html/error404.html
+echo "Ceci n'est pas une page" > /var/www/html/err404.html
 
 config_file=\
 "server {
