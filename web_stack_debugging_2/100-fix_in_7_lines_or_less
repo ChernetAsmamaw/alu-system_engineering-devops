@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Fixes the issue with the server
+# Fix the issues with the server
+pkill -f apache2
+chown nginx /etc/nginx/nginx.conf
 chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
-pkill apache2
-su nginx -s /bin/bash -c 'service nginx restart'
+sed -i 's/80/8080 default_server/g' /etc/nginx/sites-available/default
+sed -i '1 i user nginx;' /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
